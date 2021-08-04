@@ -4,8 +4,11 @@ Ziwei Zhao, CCID: ziwei11
 Weixi Cheng, CCID: weixi
 Bingran Huang, CCID: bingran1
 
+
 1. Overview of System with A Small User Guide
 For this project, we designed a system to allow the user to sign up and log in. After logging into the system, the user can post a question or search posts by inputting the keyword. The user can vote or answer the post after selecting it. As for the ​privileged user,​ in addition to the previously mentioned functions, they can also select a post to edit, add a tag or mark it as the accepted answer. Besides, the ​privileged ​user can give a badge to the poster by providing a badge name. On the homepage, users can log out at any time.
+
+
 2. A Detailed Design of Software
 (1) LogIn class:
 The first screen of your system should provide options for both registered and unregistered users to login. Registered users should be able to login using a valid user id and password, respectively denoted with uid and pwd in table users. Unregistered users could be able to sign up by pressing the ‘SIGN UP’ button. After a successful login or signup, users should be able to perform the subsequent operations (chosen from a menu).
@@ -25,8 +28,7 @@ As for the ​privileged user, three more buttons (Mark, Add Tag, Edit) will app
 (8) PERFORMPOSTACTION2 class:
 If the user selected an answer post, there will only be a vote button. ​If you click the vote button, t​he user can vote on the post (if not voted already on the same post). The vote should be recorded in the database with a vno assigned by the system, the vote date set to the current date and the user id is set to the current user.
 As for the ​privileged user, two more buttons (Add Tag, Edit) will appear on the interface.
-
- (9) Answer class, Confirm class, Compare class (​Privileged users​):
+(9) Answer class, Confirm class, Compare class (​Privileged users​):
 The user could be able to mark the post (if it is an answer) as the accepted answer. If the question has already an accepted answer, the user will be prompted if s/he wants to change the accepted answer. The user can select to change the accepted answer or leave it unchanged.
 (10) AddTag class (​Privileged users​):
 If the selected post is a question, the privileged user could be able to see current tags of the post and can add tags to the post.
@@ -34,6 +36,8 @@ If the selected post is a question, the privileged user could be able to see cur
 If the selected post is a question, the privileged user could be able to edit the title and/or the body of the post.
 (12) InputActionA class:
 If the selected post is a question, the user can post an answer for the question by providing title and body texts. The answer should be properly recorded in the database tables. A unique pid should be assigned by the system, the post date should be set to the current date and the poster should be set to the user posting it. The answer should be also linked to the question.
+
+
 3. Testing Strategy
 We write 15 different classes, each class represents a different interface and function. So we can easily test our source code based on these classes.
 Test cases include storing directly into the database before the system is running, and manually storing them when the system is running.
@@ -45,12 +49,13 @@ For all users:
 (4) Test answer a question (PERFORMPOSTACTION class, InputActionA class)
 (5) Test vote a post (PERFORMPOSTACTION class, PERFORMPOSTACTION2
 class)
-
 For ​privileged users:
 (1) Test ​privileged users​ information (LogIn class, SignIn class)
 (2) Test give a badge (GiveB class)
 (3) Test mark an answer (Answer class, Confirm class, Compare class) (4) Test add tags for the post (AddTag class)
 (5) Test edit a post (EditP class)
+
+
 4. GroupWork
 Our team distributed tasks fairly evenly, we designed the system, interface and database together. It took about 5 days to complete the source code. In order to keep the project on track, we always discuss and share our own ideas. Also, no matter which team member encountered difficulties, others will help s/he to solve them together.
 The following is the specific division of tasks.
